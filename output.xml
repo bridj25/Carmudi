@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170322 23:40:52.392" generator="Robot 3.0 (Python 2.7.11 on linux2)">
+<suite source="/home/vagrant/data/Carmudi/filteringByPrice.robot" id="s1" name="filteringByPrice">
+<kw type="setup" name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Open Page</arg>
+</arguments>
+<kw name="Open Page" library="resources">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170322 23:40:52.522" level="INFO">Opening browser 'Chrome' to base url 'https://www.carmudi.com.ph/all'</msg>
+<status status="PASS" endtime="20170322 23:41:16.749" starttime="20170322 23:40:52.522"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170322 23:41:16.906" starttime="20170322 23:41:16.750"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:41:16.906" starttime="20170322 23:40:52.521"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:41:16.906" starttime="20170322 23:40:52.521"></status>
+</kw>
+<test id="s1-t1" name="Filter Price Default">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${clearFilters}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:41:24.545" starttime="20170322 23:41:16.908"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${vehicleColapse}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:24.546" level="INFO">Clicking element 'xpath=//div[@class="title" and contains(text(),"Vehicles")]'.</msg>
+<status status="PASS" endtime="20170322 23:41:25.205" starttime="20170322 23:41:24.545"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${priceColapse}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:25.205" level="INFO">Clicking element 'xpath=//div[@class="title" and contains(text(),"Price")]'.</msg>
+<status status="PASS" endtime="20170322 23:41:25.667" starttime="20170322 23:41:25.205"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${priceRangeFromInputbox}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:25.768" level="INFO">Current page contains element 'xpath=//input[@placeholder="From:" and @data-min-value="price"]'.</msg>
+<status status="PASS" endtime="20170322 23:41:25.768" starttime="20170322 23:41:25.667"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${priceRangeToInputbox}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:26.044" level="INFO">Current page contains element 'xpath=//input[@placeholder="To:" and @data-max-value="price"]'.</msg>
+<status status="PASS" endtime="20170322 23:41:26.045" starttime="20170322 23:41:25.768"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${priceRangeFromInputbox}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:41:26.368" starttime="20170322 23:41:26.045"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${priceRangeFromInputbox}</arg>
+<arg>${priceRangeFrom}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:26.369" level="INFO">Typing text '3000000' into text field 'xpath=//input[@placeholder="From:" and @data-min-value="price"]'</msg>
+<status status="PASS" endtime="20170322 23:41:27.005" starttime="20170322 23:41:26.369"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${priceRangeToInputbox}</arg>
+<arg>${priceRangeTo}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:27.006" level="INFO">Typing text '4000000' into text field 'xpath=//input[@placeholder="To:" and @data-max-value="price"]'</msg>
+<status status="PASS" endtime="20170322 23:41:27.870" starttime="20170322 23:41:27.006"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${applyFilter}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:27.871" level="INFO">Clicking element 'xpath=//a[@class="button refresh-results expand" and contains(text(),"Apply filters")]'.</msg>
+<status status="PASS" endtime="20170322 23:41:28.378" starttime="20170322 23:41:27.870"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${saveSearchButton}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:41:28.765" starttime="20170322 23:41:28.378"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20s</arg>
+</arguments>
+<msg timestamp="20170322 23:41:48.766" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170322 23:41:48.767" starttime="20170322 23:41:28.765"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${URL}/price:${priceRangeFrom}-${priceRangeTo}/?sort=suggested</arg>
+</arguments>
+<msg timestamp="20170322 23:41:48.881" level="INFO">Current location is 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=suggested'.</msg>
+<status status="PASS" endtime="20170322 23:41:48.881" starttime="20170322 23:41:48.767"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${vihecleDisplaybox}</arg>
+</arguments>
+<assign>
+<var>${numberOfDisplay}</var>
+</assign>
+<msg timestamp="20170322 23:41:49.002" level="INFO">${numberOfDisplay} = 1</msg>
+<status status="PASS" endtime="20170322 23:41:49.002" starttime="20170322 23:41:48.881"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ ${numberOfDisplay} | 0 | -1 ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${vihecleDisplaybox}[${item}]/div[3]//h4/a</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:41:49.208" level="INFO">${VehiclePrice} = ₱ 3,000,000</msg>
+<status status="PASS" endtime="20170322 23:41:49.209" starttime="20170322 23:41:49.003"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:41:49.209" level="INFO">${VehiclePrice} = ₱ 3000000</msg>
+<status status="PASS" endtime="20170322 23:41:49.209" starttime="20170322 23:41:49.209"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>₱</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:41:49.210" level="INFO">${VehiclePrice} =  3000000</msg>
+<status status="PASS" endtime="20170322 23:41:49.210" starttime="20170322 23:41:49.209"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${priceRangeFrom} &lt;= ${VehiclePrice} &lt;= ${priceRangeTo}</arg>
+</arguments>
+<assign>
+<var>${priceRange}</var>
+</assign>
+<msg timestamp="20170322 23:41:49.211" level="INFO">${priceRange} = True</msg>
+<status status="PASS" endtime="20170322 23:41:49.212" starttime="20170322 23:41:49.210"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${priceRange}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:41:49.213" starttime="20170322 23:41:49.212"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170322 23:41:51.216" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170322 23:41:51.217" starttime="20170322 23:41:49.213"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:41:51.217" starttime="20170322 23:41:49.003"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:41:51.217" starttime="20170322 23:41:49.002"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:41:51.217" critical="yes" starttime="20170322 23:41:16.906"></status>
+</test>
+<test id="s1-t2" name="Filter Price Lowest First">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sortDropDown}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:51.218" level="INFO">Clicking element 'xpath=//a[@data-dropdown="sort-dropdown"]'.</msg>
+<status status="PASS" endtime="20170322 23:41:51.577" starttime="20170322 23:41:51.218"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${priceLowestFirst}</arg>
+</arguments>
+<msg timestamp="20170322 23:41:51.578" level="INFO">Clicking element 'xpath=//ul[@id="sort-dropdown"]/li[3]/a'.</msg>
+<status status="PASS" endtime="20170322 23:41:52.040" starttime="20170322 23:41:51.577"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${saveSearchButton}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:41:52.188" starttime="20170322 23:41:52.040"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20s</arg>
+</arguments>
+<msg timestamp="20170322 23:42:12.190" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170322 23:42:12.190" starttime="20170322 23:41:52.188"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${URL}/price:${priceRangeFrom}-${priceRangeTo}/?sort=price-low</arg>
+</arguments>
+<msg timestamp="20170322 23:42:12.239" level="INFO">Current location is 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-low'.</msg>
+<status status="PASS" endtime="20170322 23:42:12.239" starttime="20170322 23:42:12.190"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>@{priceList}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.240" level="INFO">@{priceList} = [  ]</msg>
+<status status="PASS" endtime="20170322 23:42:12.240" starttime="20170322 23:42:12.240"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${vihecleDisplaybox}</arg>
+</arguments>
+<assign>
+<var>${numberOfDisplay}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.327" level="INFO">${numberOfDisplay} = 1</msg>
+<status status="PASS" endtime="20170322 23:42:12.327" starttime="20170322 23:42:12.241"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ ${numberOfDisplay} | 0 | -1 ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${vihecleDisplaybox}[${item}]/div[3]//h4/a</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.545" level="INFO">${VehiclePrice} = ₱ 3,000,000</msg>
+<status status="PASS" endtime="20170322 23:42:12.546" starttime="20170322 23:42:12.328"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.546" level="INFO">${VehiclePrice} = ₱ 3000000</msg>
+<status status="PASS" endtime="20170322 23:42:12.546" starttime="20170322 23:42:12.546"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>₱</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.547" level="INFO">${VehiclePrice} =  3000000</msg>
+<status status="PASS" endtime="20170322 23:42:12.547" starttime="20170322 23:42:12.546"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${VehiclePrice}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:12.548" starttime="20170322 23:42:12.547"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${priceList}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:12.548" level="INFO">['', u' 3000000']</msg>
+<status status="PASS" endtime="20170322 23:42:12.548" starttime="20170322 23:42:12.548"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${priceRangeFrom} &lt;= ${VehiclePrice} &lt;= ${priceRangeTo}</arg>
+</arguments>
+<assign>
+<var>${priceRange}</var>
+</assign>
+<msg timestamp="20170322 23:42:12.550" level="INFO">${priceRange} = True</msg>
+<status status="PASS" endtime="20170322 23:42:12.550" starttime="20170322 23:42:12.549"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${priceRange}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:12.550" starttime="20170322 23:42:12.550"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170322 23:42:14.552" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170322 23:42:14.552" starttime="20170322 23:42:12.550"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:14.552" starttime="20170322 23:42:12.328"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:14.552" starttime="20170322 23:42:12.327"></status>
+</kw>
+<kw name="Check Sorting" library="resources">
+<arguments>
+<arg>${priceList}</arg>
+<arg>${numberOfDisplay}</arg>
+<arg>ascending</arg>
+</arguments>
+<kw type="for" name="${i} IN RANGE [ 0 | ${list_count}-1 ]">
+<status status="PASS" endtime="20170322 23:42:14.554" starttime="20170322 23:42:14.554"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:14.554" starttime="20170322 23:42:14.553"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:14.555" critical="yes" starttime="20170322 23:41:51.217"></status>
+</test>
+<test id="s1-t3" name="Filter Price Highest First">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sortDropDown}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:14.557" level="INFO">Clicking element 'xpath=//a[@data-dropdown="sort-dropdown"]'.</msg>
+<status status="PASS" endtime="20170322 23:42:14.890" starttime="20170322 23:42:14.556"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${priceHighestFirst}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:14.891" level="INFO">Clicking element 'xpath=//ul[@id="sort-dropdown"]/li[4]/a'.</msg>
+<status status="PASS" endtime="20170322 23:42:15.772" starttime="20170322 23:42:14.890"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${saveSearchButton}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:15.922" starttime="20170322 23:42:15.772"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20s</arg>
+</arguments>
+<msg timestamp="20170322 23:42:35.926" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170322 23:42:35.927" starttime="20170322 23:42:15.923"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>@{priceList}</var>
+</assign>
+<msg timestamp="20170322 23:42:35.929" level="INFO">@{priceList} = [  ]</msg>
+<status status="PASS" endtime="20170322 23:42:35.929" starttime="20170322 23:42:35.927"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${URL}/price:${priceRangeFrom}-${priceRangeTo}/?sort=price-high</arg>
+</arguments>
+<msg timestamp="20170322 23:42:36.018" level="INFO">Current location is 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-high'.</msg>
+<status status="PASS" endtime="20170322 23:42:36.018" starttime="20170322 23:42:35.929"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>${vihecleDisplaybox}</arg>
+</arguments>
+<assign>
+<var>${numberOfDisplay}</var>
+</assign>
+<msg timestamp="20170322 23:42:36.089" level="INFO">${numberOfDisplay} = 1</msg>
+<status status="PASS" endtime="20170322 23:42:36.089" starttime="20170322 23:42:36.019"></status>
+</kw>
+<kw type="for" name="${item} IN RANGE [ ${numberOfDisplay} | 0 | -1 ]">
+<kw type="foritem" name="${item} = 1">
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=${vihecleDisplaybox}[${item}]/div[3]//h4/a</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:36.225" level="INFO">${VehiclePrice} = ₱ 3,000,000</msg>
+<status status="PASS" endtime="20170322 23:42:36.225" starttime="20170322 23:42:36.090"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:36.225" level="INFO">${VehiclePrice} = ₱ 3000000</msg>
+<status status="PASS" endtime="20170322 23:42:36.226" starttime="20170322 23:42:36.225"></status>
+</kw>
+<kw name="Remove String" library="String">
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<arguments>
+<arg>${VehiclePrice}</arg>
+<arg>₱</arg>
+</arguments>
+<assign>
+<var>${VehiclePrice}</var>
+</assign>
+<msg timestamp="20170322 23:42:36.226" level="INFO">${VehiclePrice} =  3000000</msg>
+<status status="PASS" endtime="20170322 23:42:36.226" starttime="20170322 23:42:36.226"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${priceRangeFrom} &lt;= ${VehiclePrice} &lt;= ${priceRangeTo}</arg>
+</arguments>
+<assign>
+<var>${priceRange}</var>
+</assign>
+<msg timestamp="20170322 23:42:36.228" level="INFO">${priceRange} = True</msg>
+<status status="PASS" endtime="20170322 23:42:36.228" starttime="20170322 23:42:36.226"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${priceList}</arg>
+<arg>${VehiclePrice}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:36.229" starttime="20170322 23:42:36.228"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${priceList}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:36.230" level="INFO">['', u' 3000000']</msg>
+<status status="PASS" endtime="20170322 23:42:36.230" starttime="20170322 23:42:36.230"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${priceRange}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:36.231" starttime="20170322 23:42:36.230"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170322 23:42:38.233" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20170322 23:42:38.234" starttime="20170322 23:42:36.231"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:38.234" starttime="20170322 23:42:36.090"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:38.234" starttime="20170322 23:42:36.089"></status>
+</kw>
+<kw name="Check Sorting" library="resources">
+<arguments>
+<arg>${priceList}</arg>
+<arg>${numberOfDisplay}</arg>
+<arg>descending</arg>
+</arguments>
+<kw type="for" name="${i} IN RANGE [ 0 | ${list_count}-1 ]">
+<status status="PASS" endtime="20170322 23:42:38.235" starttime="20170322 23:42:38.235"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:38.235" starttime="20170322 23:42:38.234"></status>
+</kw>
+<status status="PASS" endtime="20170322 23:42:38.235" critical="yes" starttime="20170322 23:42:14.555"></status>
+</test>
+<test id="s1-t4" name="Filter Price Highest First Failing test">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${sortDropDown}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:38.237" level="INFO">Clicking element 'xpath=//a[@data-dropdown="sort-dropdown"]'.</msg>
+<status status="PASS" endtime="20170322 23:42:38.854" starttime="20170322 23:42:38.236"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${priceLowestFirst}</arg>
+</arguments>
+<msg timestamp="20170322 23:42:38.855" level="INFO">Clicking element 'xpath=//ul[@id="sort-dropdown"]/li[3]/a'.</msg>
+<status status="PASS" endtime="20170322 23:42:39.502" starttime="20170322 23:42:38.855"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${saveSearchButton}</arg>
+</arguments>
+<status status="PASS" endtime="20170322 23:42:39.747" starttime="20170322 23:42:39.502"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20s</arg>
+</arguments>
+<msg timestamp="20170322 23:42:59.754" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170322 23:42:59.754" starttime="20170322 23:42:39.747"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>@{priceList}</var>
+</assign>
+<msg timestamp="20170322 23:42:59.755" level="INFO">@{priceList} = [  ]</msg>
+<status status="PASS" endtime="20170322 23:42:59.755" starttime="20170322 23:42:59.755"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${URL}/price:${priceRangeFrom}-${priceRangeTo}/?sort=price-high</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170322 23:43:00.472" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170322 23:43:00.472" starttime="20170322 23:42:59.896"></status>
+</kw>
+<msg timestamp="20170322 23:43:00.473" level="FAIL">Location should have been 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-high' but was 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-low'</msg>
+<status status="FAIL" endtime="20170322 23:43:00.479" starttime="20170322 23:42:59.756"></status>
+</kw>
+<status status="FAIL" endtime="20170322 23:43:00.479" critical="yes" starttime="20170322 23:42:38.236">Location should have been 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-high' but was 'https://www.carmudi.com.ph/all/price:3000000-4000000/?sort=price-low'</status>
+</test>
+<doc>A test suite for testing Filtering by Price</doc>
+<status status="FAIL" endtime="20170322 23:43:00.481" starttime="20170322 23:40:52.398"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="3">Critical Tests</stat>
+<stat fail="1" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="filteringByPrice" pass="3">filteringByPrice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
