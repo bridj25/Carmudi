@@ -14,7 +14,7 @@ Instruction on how to execute project
 
 Reports
 -----------
-- Output:  <ProjectDirectory>/Carmudi/output.xml
-- Log:     <ProjectDirectory>/Carmudi/log.html
-- Report:  <ProjectDirectory>/Carmudi/report.html
+- Output:   ProjectDirectory/Carmudi/output.xml
+- Log:      ProjectDirectory/Carmudi/log.html
+- Report:   ProjectDirectory/Carmudi/report.html
 
