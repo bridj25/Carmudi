@@ -1,7 +1,16 @@
+Answer for Carmudi Task for QA Engineer
+-------------
+
+Task 1. Bug reports
+----------
+Bugs.docx
+
+Task 2. Automated tests
+--------------
+
 Installing Robot Framework
 ----------
 - Refer to http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#python-installation
-
 
 
 Instruction on how to execute project
@@ -18,3 +27,8 @@ Reports
 - Log:      ProjectDirectory/Carmudi/log.html
 - Report:   ProjectDirectory/Carmudi/report.html
 
+Sample Test report
+-------------
+- log.html
+- report.html
+- output.xml
